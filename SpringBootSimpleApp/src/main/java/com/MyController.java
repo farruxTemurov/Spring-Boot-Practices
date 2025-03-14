@@ -12,7 +12,7 @@ public class MyController {
 	// http://localhost:9090
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String openPage() {
-		System.out.println("Index page open");
+		System.out.println("Index page opened");
 		return "index"; // spring boot check the page name inside a templates folder using the
 						// viewresolver concept.
 	}

@@ -8,6 +8,7 @@ public class SpringBootPmsApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(SpringBootPmsApplication.class, args);
+		System.out.println("Spring boot's up!");
 	}
 
 }

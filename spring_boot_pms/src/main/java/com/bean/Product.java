@@ -13,7 +13,7 @@ import jakarta.persistence.Id;
 @Scope("prototype")
 public class Product {
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY) // it helps to make the field auto_increment
 	private int id;
 	private String name;
 	private float price;

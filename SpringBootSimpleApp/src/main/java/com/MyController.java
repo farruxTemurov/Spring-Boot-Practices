@@ -13,13 +13,13 @@ public class MyController {
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String openPage() {
 		System.out.println("Index page opened");
-		return "index"; // spring boot check the page name inside a templates folder using the
-						// viewresolver concept.
+		return "index"; // spring boot checks the page name inside a templates folder using the
+						// viewresolver concept. Thus, we don't need to add the suffix in the end
 	}
 
 	@RequestMapping(value = "/loginPage", method = RequestMethod.GET)
 	public String openLoginPage() {
-		System.out.println("login page open");
+		System.out.println("open the login page");
 		return "login";
 	}
 

@@ -7,6 +7,6 @@ import com.bean.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 @Repository
-public interface ProductDao extends JpaRepository<Product, Integer> {
+public interface ProductDao extends JpaRepository<Product, Integer> { // ProductDao now inherits CRUD methods by extending JpaRepository
 
 }

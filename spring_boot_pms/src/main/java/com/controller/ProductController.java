@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.bean.Product;
 import com.service.ProductService;
@@ -38,8 +39,22 @@ public class ProductController {
 		mm.addAttribute("pp", product); // we store product object in model scope
 		mm.addAttribute("msg", result);
 
-		List<Product> listOfProducts = productService.findAllProducts();	
+		List<Product> listOfProducts = productService.findAllProducts();
 		mm.addAttribute("products", listOfProducts);
+
+		return "index";
+	}
+
+	@RequestMapping(value = "/deleteProduct", method = RequestMethod.GET)
+	public String deleteProduct(Model mm, Product product, @RequestParam("pid") int pid) {
+
+		String result = productService.deleteProduct(pid);
+		mm.addAttribute("name", "Temurov");
+		mm.addAttribute("pp", product);
+		mm.addAttribute("msg", result);
+		List<Product> listOfProducts = productService.findAllProducts();
+		mm.addAttribute("products", listOfProducts);
+		mm.addAttribute("buttonKey", "Store Product");
 
 		return "index";
 	}

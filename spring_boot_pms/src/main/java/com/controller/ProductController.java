@@ -32,9 +32,9 @@ public class ProductController {
 
 		String result = productService.storeProduct(product);
 
-		product.setId(0);
-		product.setName("");
-		product.setPrice(0.0f); // reset value not to display once again on the same form.
+//		product.setId(0);
+//		product.setName("");
+//		product.setPrice(0.0f); // reset value not to display once again on the same form.
 		mm.addAttribute("name", "Temurov");
 		mm.addAttribute("pp", product); // we store product object in model scope
 		mm.addAttribute("msg", result);

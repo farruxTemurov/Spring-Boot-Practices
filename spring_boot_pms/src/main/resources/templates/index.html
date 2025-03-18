@@ -13,11 +13,23 @@
 	<br />
 	<form action="#" th:action="@{/storeProduct}" method="post"
 		th:object="${pp}">
-		<label>PName</label> <input type="text" name="name"
-			th:field="*{name}" /><br /> <label>Price</label> <input
-			type="number" name="price" th:field="*{price}" /><br /> <input
-			type="submit" value="Store Product" /> <input type="reset"
-			value="reset" />
+		<label>PName</label> <input type="text" name="name" th:field="*{name}" /><br />
+		<label>Price</label> <input type="number" name="price"
+			th:field="*{price}" /><br /> <input type="submit"
+			value="Store Product" /> <input type="reset" value="reset" />
 	</form>
+	<hr />
+	<table border="1">
+		<tr>
+			<th>PId</th>
+			<th>PName</th>
+			<th>Price</th>
+		</tr>
+		<tr th:each="p:${products}">
+			<td th:text="${p.id}"></td>
+			<td th:text="${p.name}"></td>
+			<td th:text="${p.price}"></td>
+		</tr>
+	</table>
 </body>
 </html>

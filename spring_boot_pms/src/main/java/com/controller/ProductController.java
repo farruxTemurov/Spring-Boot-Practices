@@ -19,8 +19,8 @@ public class ProductController {
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String openIndexPage(Model mm, Product product) { // DI for model api
 		System.out.println("Open Index Page");
-		mm.addAttribute("pp", product);
 		mm.addAttribute("name", "Temurov");
+		mm.addAttribute("pp", product);
 		List<Product> listOfProducts = productService.findAllProducts();
 		mm.addAttribute("products", listOfProducts);
 		return "index";
@@ -30,14 +30,17 @@ public class ProductController {
 	public String storeProduct(Model mm, Product product) {
 
 		String result = productService.storeProduct(product);
-		List<Product> listOfProducts = productService.findAllProducts();
-		mm.addAttribute("products", listOfProducts);
+
 		product.setId(0);
 		product.setName("");
 		product.setPrice(0.0f); // reset value not to display once again on the same form.
 		mm.addAttribute("name", "Temurov");
 		mm.addAttribute("pp", product); // we store product object in model scope
 		mm.addAttribute("msg", result);
+
+		List<Product> listOfProducts = productService.findAllProducts();	
+		mm.addAttribute("products", listOfProducts);
+
 		return "index";
 	}
 }

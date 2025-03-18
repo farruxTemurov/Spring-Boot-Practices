@@ -1,5 +1,7 @@
 package com.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,7 +20,9 @@ public class ProductController {
 	public String openIndexPage(Model mm, Product product) { // DI for model api
 		System.out.println("Open Index Page");
 		mm.addAttribute("pp", product);
-		mm.addAttribute("name", "Temurov"); 
+		mm.addAttribute("name", "Temurov");
+		List<Product> listOfProducts = productService.findAllProducts();
+		mm.addAttribute("products", listOfProducts);
 		return "index";
 	}
 
@@ -26,6 +30,8 @@ public class ProductController {
 	public String storeProduct(Model mm, Product product) {
 
 		String result = productService.storeProduct(product);
+		List<Product> listOfProducts = productService.findAllProducts();
+		mm.addAttribute("products", listOfProducts);
 		product.setId(0);
 		product.setName("");
 		product.setPrice(0.0f); // reset value not to display once again on the same form.

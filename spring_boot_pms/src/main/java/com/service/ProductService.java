@@ -49,4 +49,16 @@ public class ProductService {
 			return "product is not present";
 		}
 	}
+
+	public Product findProductByPid(int id) {
+
+		Optional<Product> result = productDao.findById(id);
+
+		if (result.isPresent()) {
+			Product p1 = result.get(); // retrieve that product object from db.
+			return p1;
+		} else {
+			return null;
+		}
+	}
 }

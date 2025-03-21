@@ -68,6 +68,7 @@
 	</section>
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
+			<item value="C:\Caltech course-Simplilearn\Spring Boot Practices\springBootBasicRestApi"/>
 			<item value="C:\Caltech course-Simplilearn\Spring Boot Practices\spring_boot_pms"/>
 			<item value="C:\Caltech course-Simplilearn\Spring Boot Practices\SpringBootWelcomeApp"/>
 		</list>

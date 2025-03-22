@@ -12,6 +12,7 @@ public class SpringBootEmpRestApiApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(SpringBootEmpRestApiApplication.class, args);
+		System.err.println("Spring boot is running on port 8080");
 	}
 
 }

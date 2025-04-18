@@ -5,10 +5,10 @@ services:
   container_name: mysql-container
   environment:
    MYSQL_ROOT_PASSWORD: root
-   MYSQL_DATABASE: employee_db
+   MYSQL_DATABASE: employee_db  // creates a db in the remote os(used by Docker)
   ports:
   - "3307:3306"
-  restart: always
+  restart: always // it ensures that docker container restarts when facing any problem
  spring-boot-container:
   build: ./
   container_name: spring-boot-container

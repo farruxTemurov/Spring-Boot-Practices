@@ -18,6 +18,7 @@ public class ProductController {
 	ProductService productService;
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
+	//model api is used to share data between controller and view
 	public String openIndexPage(Model mm, Product product) { // DI for model api
 		System.out.println("Open Index Page");
 		mm.addAttribute("name", "Temurov");
